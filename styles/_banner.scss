@@ -1,10 +1,10 @@
 .banner {
-    height: 100vh; // Ocupa toda la altura de la ventana
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('../img/index/banner.jpg') no-repeat center center/cover; // Imagen de fondo con superposición
+                url('../img/index/banner.jpg') no-repeat center center/cover; 
     text-align: center;
     margin: 0;
     padding: 0;
@@ -12,30 +12,30 @@
     .banner-content {
         h1 {
             font-size: 3rem;
-            font-weight: 300; // Peso más ligero
-            color: $color-primario; // Cambia a color primario
+            font-weight: 300; 
+            color: $color-primario; 
             margin-bottom: 1rem;
         }
 
         p {
             font-size: 1.5rem;
             font-weight: 300;
-            color: $color-secundario; // Cambia a color secundario
+            color: $color-secundario; 
             margin-bottom: 2rem;
         }
 
         .btn {
             padding: 0.75rem 1.5rem;
             font-size: 1.25rem;
-            background-color: $color-acento; // Botón inicial en rojo
+            background-color: $color-acento; 
             color: white;
             border: none;
             border-radius: 20px;
             transition: background-color 0.3s, transform 0.3s;
 
             &:hover {
-                background-color: $color-secundario; // Cambia a oscuro al pasar el mouse
-                transform: scale(1.05); // Agranda ligeramente
+                background-color: $color-secundario; 
+                transform: scale(1.05); 
             }
         }
     }

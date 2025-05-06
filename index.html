@@ -9,7 +9,7 @@
     <!-- Bootstrap Icons CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Archivo CSS personalizado -->
-    <link rel="stylesheet" href="styles/styles.css"> <!-- Este archivo será generado automáticamente -->
+    <link rel="stylesheet" href="styles/styles.css"> 
 </head>
 <body>
     <header class="bg-dark text-white py-3">
@@ -131,21 +131,20 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Selecciona todas las tarjetas de "Nuestros Servicios"
+        
         const serviceCards = document.querySelectorAll('.servicio-card');
 
-        // Agrega un evento de mousemove a cada tarjeta
+        
         serviceCards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect(); // Obtiene las dimensiones de la tarjeta
-                const x = e.clientX - rect.left; // Calcula la posición X del cursor dentro de la tarjeta
-                const y = e.clientY - rect.top; // Calcula la posición Y del cursor dentro de la tarjeta
-
-                // Aplica la transformación para mover la tarjeta hacia el cursor
+                const rect = card.getBoundingClientRect(); 
+                const x = e.clientX - rect.left; 
+                const y = e.clientY - rect.top; 
+                
                 card.style.transform = `rotateX(${(y - rect.height / 2) / 10}deg) rotateY(${(x - rect.width / 2) / 10}deg)`;
             });
 
-            // Restaura la posición de la tarjeta cuando el cursor sale
+            
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'rotateX(0) rotateY(0)';
             });
@@ -154,12 +153,12 @@
     <script>
         const carrusel = document.querySelector('.testimonios-carrusel');
 
-        // Botón para desplazar hacia la izquierda
+        
         document.querySelector('.btn-prev').addEventListener('click', () => {
             carrusel.scrollBy({ left: -300, behavior: 'smooth' });
         });
 
-        // Botón para desplazar hacia la derecha
+        
         document.querySelector('.btn-next').addEventListener('click', () => {
             carrusel.scrollBy({ left: 300, behavior: 'smooth' });
         });
@@ -170,22 +169,22 @@
         let currentIndex = 0;
 
         function updateCarousel() {
-            const angleStep = 360 / totalCards; // Ángulo entre cada tarjeta
+            const angleStep = 360 / totalCards; 
             testimonialCards.forEach((card, index) => {
-                const angle = (index - currentIndex) * angleStep; // Calcula el ángulo de cada tarjeta
+                const angle = (index - currentIndex) * angleStep; 
                 card.style.transform = `rotateY(${angle}deg) translateZ(300px)`;
-                card.style.opacity = index === currentIndex ? '1' : '0.5'; // Opaca las tarjetas no activas
+                card.style.opacity = index === currentIndex ? '1' : '0.5'; 
             });
         }
 
         function rotateCarousel() {
-            currentIndex = (currentIndex + 1) % totalCards; // Avanza al siguiente índice
+            currentIndex = (currentIndex + 1) % totalCards; 
             updateCarousel();
         }
 
-        // Inicializa el carrusel
+        
         updateCarousel();
-        setInterval(rotateCarousel, 3000); // Cambia cada 3 segundos
+        setInterval(rotateCarousel, 3000); 
     </script>
 </body>
 </html>

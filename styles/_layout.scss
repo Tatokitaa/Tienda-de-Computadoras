@@ -1,12 +1,12 @@
 html, body {
-    height: 100%; // Asegura que ocupen toda la altura de la ventana
+    height: 100%; 
 }
 
 body {
     display: flex;
-    flex-direction: column; // Organiza los elementos en una columna
+    flex-direction: column; 
     margin: 0;
-    height: 100%; // Asegura que el body ocupe toda la altura de la ventana
+    height: 100%; 
 }
 
 header, footer {
@@ -19,14 +19,14 @@ header, footer {
 header h1 {
     font-family: $font-family-suave;
     font-size: 2.5rem;
-    font-weight: 300; // Peso más ligero para un estilo más suave
+    font-weight: 300; 
     color: $color-texto;
     text-align: center;
     margin: 0;
 }
 
 main {
-    min-height: 100vh; // Asegura que ocupe al menos toda la altura de la ventana
+    min-height: 100vh; 
 }
 
 footer {
@@ -34,5 +34,5 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    margin-top: auto; // Empuja el footer al final
+    margin-top: auto; 
 }

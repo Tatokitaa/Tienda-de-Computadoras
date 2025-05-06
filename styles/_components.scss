@@ -1,8 +1,8 @@
 nav ul {
     display: flex;
-    justify-content: center; // Centra horizontalmente
-    align-items: center; // Centra verticalmente
-    height: 100%; // Asegura que los elementos ocupen toda la altura del contenedor
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
     margin: 0;
     padding: 0;
     list-style: none;
@@ -10,13 +10,13 @@ nav ul {
 
 nav ul li {
     display: flex;
-    align-items: center; // Centra verticalmente el contenido dentro de cada <li>
-    margin: 0 1rem; // Espaciado horizontal entre los elementos
+    align-items: center; 
+    margin: 0 1rem; 
 }
 
 nav ul li a {
     text-decoration: none;
-    color: $color-texto; // Usa el color de texto definido en las variables
+    color: $color-texto; 
     font-weight: bold;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s, color 0.3s;
@@ -29,10 +29,10 @@ nav ul li a {
 }
 
 nav.navbar {
-    padding-top: 0.5rem; // Ajusta el espacio superior
-    padding-bottom: 0.5rem; // Ajusta el espacio inferior
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
     display: flex;
-    align-items: center; // Centra verticalmente el contenido
+    align-items: center; 
 }
 
 .card {
