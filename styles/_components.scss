@@ -1,0 +1,82 @@
+nav ul {
+    display: flex;
+    justify-content: center; // Centra horizontalmente
+    align-items: center; // Centra verticalmente
+    height: 100%; // Asegura que los elementos ocupen toda la altura del contenedor
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center; // Centra verticalmente el contenido dentro de cada <li>
+    margin: 0 1rem; // Espaciado horizontal entre los elementos
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: $color-texto; // Usa el color de texto definido en las variables
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+        background-color: $color-acento;
+        color: white;
+        border-radius: 5px;
+    }
+}
+
+nav.navbar {
+    padding-top: 0.5rem; // Ajusta el espacio superior
+    padding-bottom: 0.5rem; // Ajusta el espacio inferior
+    display: flex;
+    align-items: center; // Centra verticalmente el contenido
+}
+
+.card {
+    background-color: white;
+    border: 1px solid $color-primario;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        color: $color-primario;
+        margin: 0.5rem 0;
+    }
+
+    p {
+        margin: 0.5rem 0;
+        color: $color-primario;
+    }
+
+    button {
+        padding: 0.75rem 1.5rem;
+        background-color: $color-acento;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $color-secundario;
+        }
+    }
+}

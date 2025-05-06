@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; // Asegura que ocupen toda la altura de la ventana
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family-suave; // Aplica la nueva fuente
+    margin: 0;
+    padding: 0;
+    background-color: $color-fondo-claro;
+    color: $color-texto; // Cambia el color del texto principal
+    line-height: 1.6;
+    letter-spacing: 0.5px; // Espaciado entre letras para un estilo más suave
+}

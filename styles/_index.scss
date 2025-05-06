@@ -1,0 +1,219 @@
+// Servicios
+.servicios {
+    h2 {
+        font-size: 2.5rem;
+        color: $color-primario; // Cambia a color primario
+        margin-bottom: 2rem;
+    }
+
+    i {
+        font-size: 3rem;
+        color: $color-acento;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: $color-secundario; // Cambia a color secundario
+    }
+
+    p {
+        font-size: 1rem;
+        color: $color-texto; // Cambia a color principal
+    }
+
+    .servicio-card {
+        background-color: white;
+        border: 1px solid $color-acento;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra inicial
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        display: flex;
+        flex-direction: column; // Asegura que el contenido esté en columna
+        align-items: center;
+        justify-content: space-between; // Espaciado uniforme entre elementos
+
+        max-width: 100%; // Asegura que la tarjeta no crezca más allá de su contenedor
+        overflow: hidden; // Oculta cualquier contenido que se salga de la tarjeta
+
+        &:hover {
+            transform: translateY(-10px); // Eleva la tarjeta hacia el cursor
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); // Sombra más pronunciada
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px; // Bordes redondeados para las imágenes
+        }
+
+        .badge {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            white-space: nowrap; // Evita que el texto se divida en varias líneas
+            overflow: hidden; // Oculta el texto que se salga del contenedor
+            text-overflow: ellipsis; // Agrega "..." si el texto es demasiado largo
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: $color-texto; // Cambia a color principal
+            text-align: center;
+            white-space: normal; // Permite que el texto se ajuste a varias líneas
+            overflow: hidden; // Oculta cualquier contenido que se salga
+            text-overflow: ellipsis; // Agrega "..." si el texto es demasiado largo
+        }
+    }
+
+    // Responsividad
+    @media (max-width: 1024px) { // iPad Pro y dispositivos similares
+        .row {
+            justify-content: center;
+        }
+
+        .servicio-card {
+            flex: 0 0 30%; // Tres tarjetas por fila
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.2rem; // Ajusta el tamaño del título
+        }
+    }
+
+    @media (max-width: 768px) { // iPad Air y dispositivos similares
+        .row {
+            justify-content: center;
+        }
+
+        .servicio-card {
+            flex: 0 0 45%; // Dos tarjetas por fila
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem; // Reduce el tamaño del título
+        }
+    }
+
+    @media (max-width: 576px) { // Teléfonos y pantallas pequeñas
+        .servicio-card {
+            flex: 0 0 100%; // Una tarjeta por fila
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem; // Reduce aún más el tamaño del título
+        }
+    }
+}
+
+// Testimonios
+.testimonios {
+    h2 {
+        font-size: 2.5rem;
+        color: $color-primario; // Cambia a color primario
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        background-color: white;
+        border: 1px solid $color-primario;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+
+        p {
+            font-size: 1rem;
+            color: $color-secundario; // Cambia a color secundario
+            margin-bottom: 1rem;
+        }
+
+        h5 {
+            font-size: 1rem;
+            color: $color-acento; // Cambia a color acento
+            text-align: right;
+        }
+    }
+
+    .testimonios-carrusel {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px; // Añade profundidad 3D
+
+        .card {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid $color-primario;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.5s ease, opacity 0s ease, box-shadow 0.5s ease;
+            opacity: 1; // Reduce la opacidad de las tarjetas no enfocadas
+            backface-visibility: hidden;
+            z-index: 1;
+
+            &.active {
+                transform: translateZ(300px); // Lleva la tarjeta activa al frente
+                opacity: 1; // Aumenta la opacidad de la tarjeta activa
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); // Sombra más pronunciada
+                z-index: 10;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $color-secundario;
+                margin-bottom: 1rem;
+            }
+
+            h5 {
+                font-size: 1rem;
+                color: $color-acento;
+                text-align: right;
+            }
+        }
+    }
+
+    // Responsividad
+    @media (max-width: 1024px) { // iPad Pro y dispositivos similares
+        .card {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.2rem; // Ajusta el tamaño del título
+        }
+    }
+
+    @media (max-width: 768px) { // iPad Air y dispositivos similares
+        .card {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem; // Reduce el tamaño del título
+        }
+    }
+
+    @media (max-width: 576px) { // Teléfonos y pantallas pequeñas
+        .card {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem; // Reduce aún más el tamaño del título
+        }
+    }
+}
