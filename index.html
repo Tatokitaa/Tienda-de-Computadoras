@@ -61,6 +61,50 @@
         </div>
     </main>
 
+    <section class="ofertas py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Ofertas y Descuentos</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="oferta-card p-3 h-100 text-center shadow-sm rounded">
+                        <img src="img/index/oferta1.png" alt="Producto en oferta 1" class="img-fluid mb-3" style="max-height:100px;">
+                        <h5 class="mb-2">Laptop HP 15"</h5>
+                        <p class="mb-1 text-success fw-bold">¡20% OFF!</p>
+                        <p class="mb-2 text-muted"><del>$15,000</del> <span class="text-danger">$12,000</span></p>
+                        <a href="#" class="btn btn-primary btn-sm">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="oferta-card p-3 h-100 text-center shadow-sm rounded">
+                        <img src="img/index/oferta2.png" alt="Producto en oferta 2" class="img-fluid mb-3" style="max-height:100px;">
+                        <h5 class="mb-2">Mouse Gamer RGB</h5>
+                        <p class="mb-1 text-success fw-bold">¡2x1!</p>
+                        <p class="mb-2 text-muted"><del>$800</del> <span class="text-danger">$400</span></p>
+                        <a href="#" class="btn btn-primary btn-sm">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="oferta-card p-3 h-100 text-center shadow-sm rounded">
+                        <img src="img/index/oferta3.png" alt="Producto en oferta 3" class="img-fluid mb-3" style="max-height:100px;">
+                        <h5 class="mb-2">Monitor Samsung 24"</h5>
+                        <p class="mb-1 text-success fw-bold">¡15% OFF!</p>
+                        <p class="mb-2 text-muted"><del>$4,500</del> <span class="text-danger">$3,825</span></p>
+                        <a href="#" class="btn btn-primary btn-sm">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="oferta-card p-3 h-100 text-center shadow-sm rounded">
+                        <img src="img/index/oferta4.png" alt="Producto en oferta 4" class="img-fluid mb-3" style="max-height:100px;">
+                        <h5 class="mb-2">Teclado Mecánico</h5>
+                        <p class="mb-1 text-success fw-bold">¡30% OFF!</p>
+                        <p class="mb-2 text-muted"><del>$2,000</del> <span class="text-danger">$1,400</span></p>
+                        <a href="#" class="btn btn-primary btn-sm">Ver Oferta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Nueva Sección: Servicios -->
     <section class="servicios py-5">
         <div class="container">
@@ -170,39 +214,37 @@
             });
         });
     </script>
-    <script>
-        const carrusel = document.querySelector('.testimonios-carrusel');
-
-        
-        document.querySelector('.btn-prev').addEventListener('click', () => {
-            carrusel.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-
-        
-        document.querySelector('.btn-next').addEventListener('click', () => {
-            carrusel.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-    </script>
+    
     <script>
         const testimonialCards = document.querySelectorAll('.testimonios-carrusel .card');
         const totalCards = testimonialCards.length;
         let currentIndex = 0;
 
+        function getSeparation() {
+            if (window.innerWidth <= 600) return 120;
+            if (window.innerWidth <= 900) return 180;
+            return 250; // Puedes ajustar este valor para desktop
+        }
+
         function updateCarousel() {
-            const angleStep = 360 / totalCards; 
+            const angleStep = 360 / totalCards;
+            const separation = getSeparation();
             testimonialCards.forEach((card, index) => {
-                const angle = (index - currentIndex) * angleStep; 
-                card.style.transform = `rotateY(${angle}deg) translateZ(300px)`;
-                card.style.opacity = index === currentIndex ? '1' : '0.5'; 
+                const angle = (index - currentIndex) * angleStep;
+                card.style.transform = `rotateY(${angle}deg) translateZ(${separation}px)`;
+                card.style.opacity = index === currentIndex ? '1' : '0.5';
+                card.style.zIndex = index === currentIndex ? '10' : '1';
+                card.classList.toggle('active', index === currentIndex);
             });
         }
+
+        window.addEventListener('resize', updateCarousel);
 
         function rotateCarousel() {
             currentIndex = (currentIndex + 1) % totalCards; 
             updateCarousel();
         }
 
-        
         updateCarousel();
         setInterval(rotateCarousel, 3000); 
     </script>
