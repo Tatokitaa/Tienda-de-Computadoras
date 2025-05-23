@@ -142,7 +142,7 @@ nav.navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/index/banner.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/banner.jpg") no-repeat center center/cover;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -300,7 +300,8 @@ nav.navbar {
 .testimonios .testimonios-carrusel .card {
   position: absolute;
   width: 180px;
-  height: 110px;
+  min-height: 110px;
+  max-height: 200px;
   background-color: rgb(255, 255, 255);
   border: 1px solid #561643;
   border-radius: 18px;
@@ -311,10 +312,24 @@ nav.navbar {
   opacity: 1;
   backface-visibility: hidden;
   z-index: 1;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .testimonios .testimonios-carrusel .card.active {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   z-index: 10;
+}
+.testimonios .testimonios-carrusel p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+  white-space: normal;
 }
 @media (max-width: 900px) {
   .testimonios .testimonios-carrusel {
@@ -392,4 +407,51 @@ nav.navbar {
 }
 .ofertas .oferta-card .btn {
   margin-top: 0.5rem;
+}
+
+.product-img-small {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  background: #fff;
+  border: 1px solid #eee;
+  z-index: 2;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.product-img-small {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  background: #fff;
+  border: 1px solid #eee;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
 }/*# sourceMappingURL=styles.css.map */
